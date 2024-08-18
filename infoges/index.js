@@ -25,6 +25,9 @@ function mostrarPosicion(posicion){
   console.log("latitud:"+latitud);
   console.log("longitud:"+longitud);
   map.setCenter({lat: latitud, lng: longitud},14);
+  if (marcador) {
+    marcador.setMap(null);
+  }
   marcador = new google.maps.Marker({
     position: {lat: latitud, lng: longitud},
     map: map,
